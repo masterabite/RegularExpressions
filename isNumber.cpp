@@ -35,6 +35,11 @@ bool isUnsignedInteger(string& str, size_t& pos) {
     }
 }
 
+bool isInteger(string& str, size_t& pos) {
+    isSign(str, pos);
+    return isUnsignedInteger(str, pos);
+}
+
 bool isExhibitor(string& str, size_t& pos) {
 
     return 
@@ -42,11 +47,6 @@ bool isExhibitor(string& str, size_t& pos) {
         isInteger(str, pos);
 }
 
-
-bool isInteger(string& str, size_t& pos) {
-    isSign(str, pos);
-    return (isUnsignedInteger(str, pos));
-}
 
 bool isDouble(string& str, size_t& pos) {
     if (isInteger(str, pos)) {
